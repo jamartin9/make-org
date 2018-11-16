@@ -1,0 +1,20 @@
+* A simple Makefile to transform org files using emacs
+** Requirements:
+- make
+- pdflatex
+- emacs
+- latex libraries
+** Usage:
+- ~make all~ - converts all org files in current directory to all formats
+- ~make FILE.pdf~ - target for each org file with pdf
+- ~make FILE.md~ - target for each org file with markdown
+- ~make FILE-beamer.pdf~ - target for each org file with beamer
+- ~make FILE.html~ - target for each org file with html
+- ~make FILE.txt~ - target for each org file with ascii
+- ~make FILE.ics~ - target for each org file with iCalendar
+- ~make FILE.odt~ - target for each org file with OpenDocument
+- ~make FILE.man~ - target for each org file with Man page
+- ~make FILE.texi~ - target for each org file with TexInfo
+- ~make prune~ - removes conversion artifacts
+- ~make clean~ - ~prune~ and remove end artifacts
+- ex. ~make all prune~ - creates all outputs and removes junk
