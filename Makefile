@@ -8,6 +8,7 @@ FILES += $(patsubst %.org, %.txt, $(ORG_FILES)) # ascii
 FILES += $(patsubst %.org, %.ics, $(ORG_FILES)) # icalendar
 FILES += $(patsubst %.org, %.man, $(ORG_FILES)) # man
 FILES += $(patsubst %.org, %.texi, $(ORG_FILES)) # texinfo
+FILES += $(patsubst %.org, %.odt, $(ORG_FILES)) # open document
 
 EMACS = emacs
 EMACS_FLAGS = -Q --batch
