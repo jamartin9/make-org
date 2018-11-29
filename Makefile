@@ -1,3 +1,7 @@
+EMACS_PROG ?= emacs
+EMACS_FLAGS ?= -Q --batch
+EMACS_CMD = $(EMACS_PROG) $(EMACS_FLAGS)
+
 ORG_FILES = $(wildcard *.org)
 FILES :=
 FILES += $(patsubst %.org, %.pdf, $(ORG_FILES)) # pdf
@@ -10,9 +14,6 @@ FILES += $(patsubst %.org, %.man, $(ORG_FILES)) # man
 FILES += $(patsubst %.org, %.texi, $(ORG_FILES)) # texinfo
 FILES += $(patsubst %.org, %.odt, $(ORG_FILES)) # open document
 
-EMACS = emacs
-EMACS_FLAGS = -Q --batch
-EMACS_CMD = $(EMACS) $(EMACS_FLAGS)
 
 .PHONY: all prune clean
 all: $(FILES)
