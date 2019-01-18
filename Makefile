@@ -1,8 +1,8 @@
 EMACS_PROG ?= emacs
 EMACS_FLAGS ?= -Q --batch
-EMACS_CMD = $(EMACS_PROG) $(EMACS_FLAGS)
+EMACS_CMD := $(EMACS_PROG) $(EMACS_FLAGS)
 
-ORG_FILES = $(wildcard *.org)
+ORG_FILES := $(wildcard *.org)
 FILES :=
 FILES += $(patsubst %.org, %.pdf, $(ORG_FILES)) # pdf
 FILES += $(patsubst %.org, %.md, $(ORG_FILES)) # md
