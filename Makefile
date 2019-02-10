@@ -16,7 +16,7 @@ FILES += $(patsubst %.org, %.odt, $(ORG_FILES)) # open document
 FILES += index.html # site
 
 index.html: README.html
-	ln $< $@
+	ln -f $< $@
 
 .PHONY: all prune clean
 
