@@ -21,3 +21,4 @@
 - ~make prune~ - removes conversion artifacts
 - ~make clean~ - ~prune~ and remove end artifacts
 - ex. ~make all prune~ - creates all outputs and removes junk
+** Example site: https://jamartin9.github.io/make-org/
