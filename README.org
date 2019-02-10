@@ -18,7 +18,8 @@
 - ~make FILE.odt~ - target for each org file with OpenDocument
 - ~make FILE.man~ - target for each org file with Man page
 - ~make FILE.texi~ - target for each org file with TexInfo
+- ~make index.html~ - target for site
 - ~make prune~ - removes conversion artifacts
 - ~make clean~ - ~prune~ and remove end artifacts
 - ex. ~make all prune~ - creates all outputs and removes junk
-** Example site: https://jamartin9.github.io/make-org/
+** Example site: https://jamartin9.github.io/make-org/index.html
