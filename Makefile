@@ -13,9 +13,13 @@ FILES += $(patsubst %.org, %.ics, $(ORG_FILES)) # icalendar
 FILES += $(patsubst %.org, %.man, $(ORG_FILES)) # man
 FILES += $(patsubst %.org, %.texi, $(ORG_FILES)) # texinfo
 FILES += $(patsubst %.org, %.odt, $(ORG_FILES)) # open document
+FILES += index.html # site
 
+index.html: README.html
+	ln $< $@
 
 .PHONY: all prune clean
+
 all: $(FILES)
 
 prune:

@@ -1,3 +1,6 @@
+#+TITLE: make-org
+#+OPTIONS: html-style:nil
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/default.css" />
 * A simple Makefile to transform org files using emacs
 ** Requirements:
 - make
