@@ -1,9 +1,9 @@
 EMACS_PROG ?= emacs
 EMACS_FLAGS ?= -Q --batch
-EMACS_CMD := $(EMACS_PROG) $(EMACS_FLAGS)
+EMACS_CMD ::= $(EMACS_PROG) $(EMACS_FLAGS)
 
-ORG_FILES := $(wildcard *.org)
-FILES :=
+ORG_FILES ::= $(wildcard *.org)
+FILES ::=
 FILES += $(patsubst %.org, %.pdf, $(ORG_FILES)) # pdf
 FILES += $(patsubst %.org, %.md, $(ORG_FILES)) # md
 FILES += $(patsubst %.org, %-beamer.pdf, $(ORG_FILES)) # beamer
@@ -13,6 +13,8 @@ FILES += $(patsubst %.org, %.ics, $(ORG_FILES)) # icalendar
 FILES += $(patsubst %.org, %.man, $(ORG_FILES)) # man
 FILES += $(patsubst %.org, %.texi, $(ORG_FILES)) # texinfo
 FILES += $(patsubst %.org, %.odt, $(ORG_FILES)) # open document
+FILES += $(patsubst %.org, %.sh, $(ORG_FILES)) # tangle script
+
 FILES += index.html # site
 
 index.html: README.html
@@ -23,10 +25,10 @@ index.html: README.html
 all: $(FILES)
 
 prune:
-	rm -f *.nav *.tex *.toc *.snm *.log *.aux *.out *.vrb *.tex\~ *.md\~ *.txt\~ *.html\~ *.ics\~ *.texi\~ *.pdf\~ *.man\~
+	rm -f *.nav *.tex *.toc *.snm *.log *.aux *.out *.vrb *.tex\~ *.md\~ *.txt\~ *.html\~ *.ics\~ *.texi\~ *.pdf\~ *.man\~ *.sh\~
 
 clean : prune
-	rm -f *.pdf *.md *.html *.odt *.man *.ics *.texi *.txt
+	rm -f *.pdf *.md *.html *.odt *.man *.ics *.texi *.txt *.sh
 
 %.pdf : %.org
 	$(EMACS_CMD) $< -f org-latex-export-to-pdf
@@ -55,3 +57,6 @@ clean : prune
 
 %.texi : %.org
 	$(EMACS_CMD) $< -f org-texinfo-export-to-texinfo # org-texinfo-export-to-info
+
+%.sh : %.org
+	$(EMACS_CMD) $< --eval="(org-mode)" -f org-babel-tangle # org-babel-detangle

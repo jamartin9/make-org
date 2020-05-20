@@ -18,8 +18,13 @@
 - ~make FILE.odt~ - target for each org file with OpenDocument
 - ~make FILE.man~ - target for each org file with Man page
 - ~make FILE.texi~ - target for each org file with TexInfo
+- ~make FILE.sh~ - target for each org file with babel-org-tangle script output
 - ~make index.html~ - target for site
 - ~make prune~ - removes conversion artifacts
 - ~make clean~ - ~prune~ and remove end artifacts
 - ex. ~make all prune~ - creates all outputs and removes junk
+#+NAME: tangle
+#+BEGIN_SRC sh :tangle yes :shebang #!/usr/bin/env sh
+make clean all prune
+#+END_SRC
 ** Example site: https://jamartin9.github.io/make-org/index.html
